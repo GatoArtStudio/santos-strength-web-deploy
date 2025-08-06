@@ -20,6 +20,8 @@ jobs:
           submodules: recursive
           fetch-depth: 0
           set-safe-directory: true
+      - name: Update git submodules
+        run: git submodule update --remote --recursive
       - name: List files in deploy directory
         run: ls deploy
       - name: List files
