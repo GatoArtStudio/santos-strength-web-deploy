@@ -1,0 +1,24 @@
+name: Deploy for private repository
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: update-git-submodules
+        id: submodules
+        uses: sgoudham/update-git-submodules@v2.1.3
+      - name: List files
+        run: ls deploy
