@@ -1,4 +1,4 @@
 [submodule "deploy"]
 	path = deploy
-	url = git@github.com:GatoArtStudio/santos-strength-web.git
+	url = https://github.com/GatoArtStudio/santos-strength-web.git
 	branch = main
