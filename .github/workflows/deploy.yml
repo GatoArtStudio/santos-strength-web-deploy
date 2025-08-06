@@ -29,7 +29,7 @@ jobs:
       - name: Update git submodules
         run: git submodule update --remote --recursive
       - name: Copy files to deploy directory
-        run: cp deploy/* ./
+        run: cp -rv deploy/* ./
       - name: List files in deploy directory
         run: ls deploy
       - name: List files
