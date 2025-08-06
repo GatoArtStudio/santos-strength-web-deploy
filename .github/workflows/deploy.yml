@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.2.2
         with:
-          token: ${{ secrets.GITHUB_TOKEN  }}
+          token: ${{ secrets.PAT_TOKEN  }}
           submodules: recursive
           fetch-depth: 0
           set-safe-directory: true
