@@ -52,6 +52,13 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
+      - name: Show package manager
+        run: |
+          echo "Package manager: ${{ steps.detect-package-manager.outputs.manager }}"
+          echo "Command: ${{ steps.detect-package-manager.outputs.command }}"
+          echo "Runner: ${{ steps.detect-package-manager.outputs.runner }}"
+          echo "Workspace: ${{ github.workspace }}"
+          echo $GITHUB_OUTPUT
       - name: Install pnpm
         uses: pnpm/action-setup@v4
       - name: Setup Pages
