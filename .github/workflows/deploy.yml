@@ -15,13 +15,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.2.2
         with:
-          token: ${{ github.token }}
-          submodules: true
+          token: ${{ secrets.TOKEN  }}
+          submodules: recursive
           fetch-depth: 0
-      - name: Git Submodule Status Commenter
-        uses: rematocorp/submodule-status-commenter@v2.2.0
-        with:
-          github-token: ${{ github.token }}
+          set-safe-directory: true
       - name: List files in deploy directory
         run: ls deploy
       - name: List files
